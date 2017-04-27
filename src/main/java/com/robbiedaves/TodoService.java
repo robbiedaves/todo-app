@@ -18,7 +18,8 @@ public class TodoService {
                 .thenComparing(Todo::getDescription);
         List<Todo> result = todoList
                 .stream()
-                .filter(e -> e.getTitle().compareToIgnoreCase(text) == 0|| e.getDescription().compareToIgnoreCase(text) == 0)
+                .filter(e -> e.getTitle().toUpperCase().contains(text.toUpperCase()) ||
+                             e.getDescription().toUpperCase().contains(text.toUpperCase()))
                 .sorted(groupByComparator)
                 .collect(Collectors.toList());
         return result;
