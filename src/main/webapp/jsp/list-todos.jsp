@@ -1,16 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-           <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-           <script src="../js/jquery-3.2.1.js"></script>
-           <script src="../js/bootstrap.min.js"></script>
+           <link rel="stylesheet" href="../todo-app/css/bootstrap.min.css"/>
+           <script src="../todo-app/js/jquery-3.2.1.js"></script>
+           <script src="../todo-app/js/bootstrap.min.js"></script>
     </head>
 
     <body>
         <div class="container">
             <h2>Todos</h2>
             <!-- Search Form -->
-            <form action="/todos" method="get" id="searchTodoForm" role="form">
+            <form action="/todo-app/todos" method="get" id="searchTodoForm" role="form">
                  <input type="hidden" id="searchAction" name="searchAction" value="searchByText">
                  <div class="form-group col-xs-5">
                     <input type="text" name="todoText" id="todoText" class="form-control" required="true" placeholder="Type the search text"/>
@@ -23,7 +23,7 @@
             </form>
 
             <!--Todo List-->
-            <form action="/todos" method="post" id="todoForm" role="form" >
+            <form action="/todo-app/todos" method="post" id="todoForm" role="form" >
 
                 <c:choose>
                     <c:when test="${not empty todoList}">

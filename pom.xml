@@ -58,7 +58,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <path>/</path>
+                    <path>/todo-app</path>
                 </configuration>
             </plugin>
 
