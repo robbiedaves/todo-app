@@ -7,8 +7,9 @@ This is a simple tutorial on how to create a Java web todo app
 * Test it works deployed to heroku
 * Write JUnit tests
 * Finish CRUD services
+* Add DB
 * Get js files to download using maven instead of stored
-
+* Add SOAP service and REST API service to view and maintain todos
 
 
 ###Step 1 - Create Project
