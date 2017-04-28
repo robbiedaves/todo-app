@@ -2,6 +2,14 @@
 
 This is a simple tutorial on how to create a Java web todo app
 
+##Todos for the application
+* Test it works in JBoss Wildfly 
+* Test it works deployed to heroku
+* Write JUnit tests
+* Finish CRUD services
+* Get js files to download using maven instead of stored
+
+
 
 ###Step 1 - Create Project
 Create a new project using the maven-archetype-webapp
@@ -18,13 +26,20 @@ Add the following to the POM
       <artifactId>tomcat7-maven-plugin</artifactId>
       <version>2.2</version>
       <configuration>
-        <path>/todo</path>
+          <path>/todo-app</path>
+          <contextReloadable>true</contextReloadable>
       </configuration>
    </plugin>
 </plugins>
 ```
+This sets the context path to /todo-app to match the webapp name. 
+We needed to do this because when we deployed into a server the URLs would not work as the web app defaulted name was todo-app.
+We also set the contextReloadable parameter to true so java changes will be seen on recompile
 
-Also edit the index.jsp and change the hello world text to Todo app
+Also edit the index.jsp and change the hello world text to Todo app, as follows
+```XML
+<jsp:forward page="/todos" />
+```
 
 #Step 3 - Start Tomcat server and Test
 
