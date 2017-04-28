@@ -4,4 +4,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>Archetype Created Web Application</display-name>
+
+    <!-- Enable directory listings by overriding the server default web.xml -->
+    <!-- Note: This will only work for tomcat servers -->
+    <!-- definition for the default servlet -->
+    <!--<servlet>-->
+        <!--<servlet-name>DefaultServletOverride</servlet-name>-->
+        <!--<servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>debug</param-name>-->
+            <!--<param-value>0</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>listings</param-name>-->
+            <!--<param-value>true</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>100</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--&lt;!&ndash; Add a mapping for our new default servlet &ndash;&gt;-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>DefaultServletOverride</servlet-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</servlet-mapping>-->
+
 </web-app>
