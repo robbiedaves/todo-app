@@ -5,13 +5,18 @@ This is a simple tutorial on how to create a Java web todo app
 ##Todos for the application
 * [DONE] Get js files to download using maven instead of stored
 * [DONE] Test it works in JBoss Wildfly 
-* Finish CRUD services
+* [IN PROGRESS] Finish CRUD services
+** There is a bug with the new and edit. One finds the css the other doesn't even though they are the same JSP page
+    The only difference is one is triggered from the jsp and the other from the servlet. We need to understand how this is working
+** Also, there seems to be an issue with the delete button. It works, then it doesn't. I think its the same issue as the new/edit. There is a context path issue here which we don't fully understand. We can delete once but then the servlet displays the screen again. I think on the second time display it doesn't work correctly and thus the delete doesn't work.
+
 * Test it works deployed to heroku
 * Write JUnit tests
 * Test we can get this to work with Jetty
 * Add DB
 * See if we can use it with proper DB and H2 DB
 * Add SOAP service and REST API service to view and maintain todos
+* We need to test a proper GIT workflow, i.e. dev branch, merge, pull request and conflict resolution test.
 
 
 ###Step 1 - Create Project
@@ -64,6 +69,24 @@ http://localhost:8080/todo/
 The web page should display 'todo app'
 
 stop the server by hitting ctrl c in the terminal.
+
+
+#Step3.1
+
+We can also add the wildfly plugin to do the same thing
+```
+<plugin>
+    <groupId>org.wildfly.plugins</groupId>
+    <artifactId>wildfly-maven-plugin</artifactId>
+    <version>1.2.0.Alpha4</version>
+</plugin>
+```
+And run it with 
+```
+mvn wildfly:run
+```
+
+
 
 #Step 4 - Setting up IDE to run
 Note: These instructions are for Intellij
