@@ -3,6 +3,7 @@ package com.robbiedaves;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class TodoService {
@@ -11,6 +12,34 @@ public class TodoService {
 
     public List<Todo> getAllTodos() {
        return todoList;
+    }
+    
+    public long addTodo(Todo todo) {
+        todoList.add(todo);
+        return todo.getId();
+    }
+    
+    public boolean updateTodo(Todo todo) {
+        int matchIdx = 0;
+        Optional<Todo> match = todoList.stream()
+                .filter(t -> t.getId() == todo.getId())
+                .findFirst();
+        if (match.isPresent()) {
+            matchIdx = todoList.indexOf(match.get());
+            todoList.set(matchIdx, todo);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public boolean deleteTodo(long id) {
+        Predicate<Todo> todo = e -> e.getId() == id;
+        if (todoList.removeIf(todo)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public List<Todo> searchTodos(String text) {

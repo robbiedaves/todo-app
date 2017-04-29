@@ -3,12 +3,14 @@
 This is a simple tutorial on how to create a Java web todo app
 
 ##Todos for the application
-* Test it works in JBoss Wildfly 
+* [DONE] Get js files to download using maven instead of stored
+* [DONE] Test it works in JBoss Wildfly 
+* Finish CRUD services
 * Test it works deployed to heroku
 * Write JUnit tests
-* Finish CRUD services
+* Test we can get this to work with Jetty
 * Add DB
-* Get js files to download using maven instead of stored
+* See if we can use it with proper DB and H2 DB
 * Add SOAP service and REST API service to view and maintain todos
 
 

@@ -8,6 +8,10 @@
     <name>todo-app Maven Webapp</name>
 
     <packaging>war</packaging>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -54,12 +58,12 @@
 
     <build>
         <finalName>todo-app</finalName>
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>src/main/webapp</directory>-->
-                <!--<targetPath>META-INF/resources</targetPath>-->
-            <!--</resource>-->
-        <!--</resources>-->
+<!--        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+            </resource>
+        </resources>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
