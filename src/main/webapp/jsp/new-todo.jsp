@@ -1,10 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-<!--         <link rel="stylesheet" href="../webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-         <script src="../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-         <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-         <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="/todo-app/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+         <script src="/todo-app/webjars/jquery/3.2.0/jquery.min.js"></script>
+         <script src="/todo-app/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">

@@ -7,9 +7,7 @@ public class TodoList {
 
     private static final List<Todo> todoList = new ArrayList<>();
 
-    private TodoList(){
-
-    }
+    private TodoList(){ }
 
     static {
         todoList.add(new Todo("Get Passport", "Get passport for holidays", "Robin Davies"));
@@ -21,8 +19,5 @@ public class TodoList {
     public static List<Todo> getInstance(){
         return todoList;
     }
-
-
-
 
 }

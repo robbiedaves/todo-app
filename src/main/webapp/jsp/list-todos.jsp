@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
-         <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-         <script src="webjars/jquery/3.2.0/jquery.min.js"></script>
-         <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="/todo-app/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+         <script src="/todo-app/webjars/jquery/3.2.0/jquery.min.js"></script>
+         <script src="/todo-app/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -24,15 +24,13 @@
 
             <!-- Alert Message -->
            <c:if test="${not empty message}">
-               <div class="alert alert-success>
+               <div class="alert alert-success">
                     ${message}
                </div>
            </c:if>
-
-
-            <!--Todo List-->
-            <form action="/todo-app/todos" method="post" id="todoForm" role="form" >
-                <input type="hidden" id="idTodo" name="idTodo">
+            
+           <form action="/todo-app/todos" method="post" id="todoForm" role="form">
+            <input type="hidden" id="idTodo" name="idTodo">
                 <input type="hidden" id="action" name="action">
                 <c:choose>
                     <c:when test="${not empty todoList}">
@@ -59,12 +57,13 @@
                                     <td>${todo.description}</td>
                                     <td>${todo.raisedBy}</td>
                                     <td>${todo.completed}</td>
-                                    <td>
-                                        <a href="#" id="remove"
-                                            onclick="document.getElementById('action').value = 'remove';document.getElementById('idTodo').value = '${todo.id}';
-                                                     document.getElementById('todoForm').submit();">			 
-                                               <span class="glyphicon glyphicon-trash"/>
-                                        </a>
+                                    <td>                                                     
+                                        <a href="#" id="remove" 
+                                            onclick="document.getElementById('idTodo').value='${todo.id}';
+                                                     document.getElementById('action').value='remove';
+                                                     document.getElementById('todoForm').submit();"> 
+                                            <span class="glyphicon glyphicon-trash"/>
+                                        </a>                           
                                     </td>
                                 </tr>
                             </c:forEach>
