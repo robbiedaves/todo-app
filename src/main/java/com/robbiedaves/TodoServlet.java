@@ -123,7 +123,6 @@ public class TodoServlet extends HttpServlet {
     private void removeTodoAction(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         long idTodo = Integer.valueOf(req.getParameter("idTodo"));
-		System.out.println("ROBXX Delete:   " + idTodo);
         boolean confirm = todoService.deleteTodo(idTodo);
         if (confirm) {
             String message = "The Todo has successfully been removed";
